@@ -1,0 +1,19 @@
+#+hugo_base_dir: ../
+
+* About
+:PROPERTIES:
+:EXPORT_HUGO_SECTION: /
+:EXPORT_FILE_NAME: about
+:END:
+
+#+ATTR_HTML: :width 100
+[[/images/me_crop.jpeg]]
+
+Hello -- I'm Sean, a PhD student at UNC Chapel Hill in the [[https://mckaylab.web.unc.edu][McKay Lab]]. I'm combining genetic analysis and genomics to study how organisms control gene expression to build themselves a body. Specifically, I am studying the famous [[https://en.wikipedia.org/wiki/Polycomb-group_proteins][Polycomb-group proteins]] and the chromatin structures that they regulate.
+
+* Cogs and Causes :science:epigenetics:@category1:
+:PROPERTIES:
+:EXPORT_FILE_NAME: cogs-and-causes
+:END:
+
+The field of chromatin biology is caught up in a bit of a debate right now.

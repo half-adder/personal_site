@@ -1,0 +1,43 @@
+baseURL = 'http://seanjohnsen.com/'
+languageCode = 'en-us'
+title = 'Sean Johnsen'
+
+theme = "archie"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[params]
+    subtitle="PhD Student at UNC Chapel Hill"
+    mode="toggle"
+
+[[params.social]]
+name = "GitHub"
+icon = "github"
+url = "https://github.com/half-adder"
+
+[[params.social]]
+name = "Twitter"
+icon = "twitter"
+url = "https://twitter.com/sean_johnsen"
+
+
+[[menu.main]]
+name = "home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "about"
+url = "/about"
+weight = 3
+
+[[menu.main]]
+name = "tags"
+url = "/tags"
+weight = 4
