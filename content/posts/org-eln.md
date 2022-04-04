@@ -8,7 +8,7 @@ draft = false
 
 [Org mode](https://orgmode.org/) is a popular package for the Emacs text editor. It specifies a document structure and syntax, then provides a wealth of tools to work with those files. This has allowed for the creation of an entire ecosystem of plain-text-oriented tooling around Org documents. In fact, I am writing this post in org mode right now. This whole site is created using Org mode and emacs!
 
-I recently started a PhD, and have adopted Org mode for taking notes on the scientific literature, and for use as an [electronic lab notebook](https://en.wikipedia.org/wiki/Electronic_lab_notebook) (ELN). In this post, I'll first briefly explain some fundamental ideas behind org-mode. Next, I'll describe how I use these tools in my daily practice. Finally, I'll describe my particular configuration which aids in scientific documentation and note-taking.
+I recently started a PhD in Genetics &amp; Molecular Biology, and have adopted Org mode for taking notes on the scientific literature, and for use as an [electronic lab notebook](https://en.wikipedia.org/wiki/Electronic_lab_notebook) (ELN). In this post, I'll first briefly explain some fundamental ideas behind org-mode. Next, I'll describe how I use these tools in my daily practice. Finally, I'll describe my particular configuration which aids in scientific documentation, note-taking, and project planning / task management.
 
 
 ## Emacs and Org mode - What they are and what they do {#emacs-and-org-mode-what-they-are-and-what-they-do}
@@ -32,7 +32,7 @@ In biological research, one often has multiple interdependent projects each of w
 2.  Verify that the antibodies I have for that PTM are specific, and work in the genomic assay I will use
 3.  Actually perform the genomic assay on each different strain of fly
 
-Just creating the required strains of flies will require months of work to engineer bacteria containing the DNA I wish to insert into the flies, inject the flies with this DNA, and verify that they contain the novel DNA. Of course of those steps will require tasks, sub-tasks, and sub-sub-tasks, each requiring molecular verification. These verification experiments produce data in different forms: sometimes confocal micrographs, sometimes pictures of a gel electrophoresis run, sometimes manual counts of living versus dead larvae. Sometimes I just take a picture of a petri dish growing bacteria with my phone. My genomics experiments generate large amounts of raw data formatted as [FASTQ](https://en.wikipedia.org/wiki/FASTQ_format) files, which are subsequently processed by bioinformatic piplines that we write in the lab, generating "processed" data files. These processed files are further used in downstream statistical analyses in R markdown notebooks.
+Simply engineering the required strains of flies will require months of work to engineer bacteria containing the DNA I wish to insert into the flies, inject the flies with this DNA, and verify that they contain the novel DNA. Of course of those steps will require tasks, sub-tasks, and sub-sub-tasks, each requiring molecular verification. These verification experiments produce data in different forms: sometimes confocal micrographs, sometimes pictures of a gel electrophoresis run, sometimes manual counts of living versus dead larvae. Sometimes I just take a picture of a petri dish growing bacteria with my phone. My genomics experiments generate large amounts of raw data formatted as [FASTQ](https://en.wikipedia.org/wiki/FASTQ_format) files, which are subsequently processed by bioinformatic piplines that we write in the lab, generating "processed" data files. These processed files are further used in downstream statistical analyses in R markdown notebooks.
 
 These different data need to be organized and indexed. Crucially, I need to be able to look at a piece of data, and _go back to the entry in my notebook where I recorded the relevant details of the process that generated that data_. This is where Emacs and Org mode come in...
 
@@ -42,6 +42,32 @@ These different data need to be organized and indexed. Crucially, I need to be a
 Emacs' Org mode provides a perfect environment for maintaining an electronic lab notebook.
 
 First, **Org files are plain text**. The first edition of ASCII was published 59 years ago[^fn:2]. My guess is that plain text files will be readable for at least another 100 years. I don't expect that anyone will care about my thesis 100 years from now, but it still feels good that no one will need a proprietary piece of software to read my notebook (I'm looking at you Microsoft OneNote).
+
+I break my work up into "Projects". These are independent broad lines of investigation revolving around a central hypothesis or set of hypotheses. Each project gets its own directory in my lab notebook. A project contains the following file hierarchy:
+
+```text
+├── PcG_initiation_project
+│   ├── data
+│   ├── images
+│   ├── notebook.org
+│   ├── ref
+│   └── code
+```
+
+`data`
+: contains raw data that I generate
+
+`images`
+: contains all of the images and figures that i reference in my notebook
+
+`notebook.org`
+: is an org-file containing the whole lab notebook
+
+`ref`
+: contains miscellaneous files that I did not generate as (e.g. order sheets, data files I did not generate, etc.)
+
+`code`
+: contains scripts (e.g. Python or R) that I use in the project
 
 
 ## My configuration {#my-configuration}
